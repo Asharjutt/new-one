@@ -1,0 +1,652 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color:orangered;
+}
+
+/* Burger menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.burger:hover
+{
+    background-color:purple ;
+}
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: all 0.8s ease;
+}
+
+/* Animation for links on small screens */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive design for mobile screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgb(159, 25, 159);
+        top: 60px;
+        right: 0;
+        width: 40%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* Burger menu transition for animation */
+    .burger.toggle .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.toggle .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+
+
+
+
+
+
+/* crousel img section*/
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Adjust max-width as needed */
+    margin: 20px auto; /* Center the carousel */
+    overflow: hidden; /* Hide overflow for image transitions */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 1s ease; /* Smooth transition for sliding */
+}
+
+.carousel-image {
+    min-width: 100%; /* Each image takes full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* crousel img section/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Basic reset */
+
+
+/* Navbar styling */
+.navbar_2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: px;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+}
+
+.nav-icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-container {
+    flex: 1; /* Allows the search container to take available space */
+    display: flex;
+    justify-content: center; /* Centers the search bar */
+}
+
+.search-bar {
+    width: 50%; /* Default width */
+    padding: 10px;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: width 0.5s ease, background-color 0.4s ease; /* Add transition effects */
+    background-color: #fff; /* Default background color */
+}
+
+/* Change styles on focus */
+.search-bar:focus {
+    width: 80%; /* Increase width on focus */
+    background-color: #f9f9f9; /* Change background color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Style for icons on hover */
+.nav-icon:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.product-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Grid layout for products */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 20px; /* Space between products */
+}
+
+/* Product card styling */
+.product-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Transition for hover effect */
+    animation: fadeIn 0.5s ease; /* Fade-in animation */
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+    transform: translateY(-5px); /* Raise card on hover */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 column on extra small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Circle bar styling */
+.circle-bar {
+    display: flex;
+    justify-content: center; /* Center the circles horizontally */
+    align-items: center; /* Center the circles vertically */
+    gap: 20px; /* Space between circles */
+    padding: 20px;
+}
+
+/* Circle styling */
+.circle {
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center align items */
+    width: 100px; /* Set the width */
+    height: 100px; /* Set the height */
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Hide overflow to keep images within circle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+/* Image styling */
+.circle img {
+    width: 100%; /* Make image fill the circle */
+    height: 100%; /* Make image fill the circle */
+    object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
+}
+
+/* Text styling */
+.circle p {
+    margin-top: 5px; /* Space between image and text */
+    font-size: 14px; /* Text size */
+    color: #333; /* Text color */
+    text-align: center; /* Center align text */
+}
+
+/* Hover effect */
+.circle:hover {
+    transform: scale(1.1); /* Slightly enlarge the circle on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Carousel container */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Max width for the carousel */
+    overflow: hidden; /* Hide overflow */
+    margin: auto; /* Center the carousel */
+}
+
+/* Carousel images */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition */
+    width: 400%; /* 100% for each image */
+}
+
+.carousel-images img {
+    width: 100%; /* Each image takes full width */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+.btn {
+    background-color: purple; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px 30px; /* Button padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    position: relative; /* For positioning pseudo-element */
+    overflow: hidden; /* Hide overflow */
+    transition: color 0.4s ease; /* Smooth color transition */
+    margin-left: 100px;
+    margin-top: 30px;
+    border-radius: 30px;
+}
+
+/* Hover animation */
+.btn:hover {
+    color: rgb(147, 4, 147); /* Change text color on hover */
+    background-color: white; /* Change background color on hover */
+    
+        transform: translateY(1px); /* Move button down slightly on click */
+    
+}
+
+/* Pseudo-element for hover effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 300%; /* Width of the animation */
+    height: 300%; /* Height of the animation */
+    background: rgba(255, 154, 154, 0.5); /* Light overlay color */
+    border-radius: 50%; /* Circular overlay */
+    transition: transform 0.5s ease; /* Smooth transform transition */
+    transform: translate(-50%, -50%) scale(0); /* Initially hidden */
+}
+
+/* Show overlay on hover */
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Show overlay */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Subscription section styling */
+.subscription-section {
+    background-color: #fff; /* White background for the section */
+    padding: 20px; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+    opacity: 0; /* Start invisible for animation */
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeInUp 0.5s forwards; /* Fade in animation */
+    margin-left: 3px;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Subscription form styling */
+.subscription-section {
+    background-color: #fff; /* White background for the section */
+    padding: 20px; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width */
+    opacity: 0; /* Start invisible for animation */
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeInUp 0.5s forwards; /* Fade in animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Subscription form styling */
+.subscription-form {
+    display: flex; /* Flexbox for input and button */
+    justify-content: center; /* Center items */
+    margin-top: 10px; /* Margin above the form */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+/* Input field styling */
+.subscription-form input[type="email"] {
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    width: 100%; /* Full width on small screens */
+    max-width: 240px; /* Maximum width on larger screens */
+    margin-right: 10px; /* Space between input and button */
+    transition: border 0.3s ease; /* Smooth border color transition */
+}
+
+/* Input field focus effect */
+.subscription-form input[type="email"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button styling */
+.subscribe-button {
+    background-color: purple; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Button hover effect */
+.subscribe-button:hover {
+    background-color: rgb(169, 26, 169); /* Darker blue on hover */
+    transform: translateY(-3px); /* Move button up slightly on hover */
+}
+
+/* Button active effect */
+.subscribe-button:active {
+    transform: translateY(1px); /* Move button down slightly on click */
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .subscription-form {
+        flex-direction: column; /* Stack input and button on small screens */
+    }
+    
+    .subscription-form input[type="email"] {
+        margin-right: 0; /* Remove margin for stacked layout */
+        margin-bottom: 10px; /* Add margin below input */
+    }
+
+    .subscribe-button {
+        width: 100%; /* Full width for button on small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer styling */
+.footer {
+    background-color: #333; /* Dark background color */
+    color: white; /* Text color */
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+.footer-container {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-around; /* Space between items */
+    align-items: flex-start; /* Align items at the top */
+    max-width: 1200px; /* Max width for the footer */
+    margin: auto; /* Center the footer */
+}
+
+.brand-name {
+    flex: 1; /* Allow this section to grow */
+    text-align: center; /* Center align brand name */
+    margin: 10px; /* Margin around brand name */
+}
+
+.footer-address,
+.contact-us,
+.social-icons {
+    flex: 1; /* Allow each section to grow */
+    text-align: center; /* Center align text */
+    margin: 10px; /* Margin around sections */
+}
+
+/* Social icons styling */
+.social-icons img {
+    width: 30px; /* Icon size */
+    height: 30px; /* Icon size */
+    margin: 0 10px; /* Spacing between icons */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+/* Social icons hover effect */
+.social-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack items on small screens */
+        align-items: center; /* Center align items */
+    }
+
+    .footer-address,
+    .contact-us,
+    .social-icons {
+        margin-bottom: 15px; /* Space below each section */
+    }
+}
